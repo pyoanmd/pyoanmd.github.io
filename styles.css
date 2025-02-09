@@ -23,7 +23,7 @@ html {
 body {
     display: -webkit-flex;
     display:flex;
-    font-family: "Times New Roman";
+    font-family: "Sans-Serif";
     flex-direction: column;
     align-items: center;
     justify-content: start;
@@ -45,8 +45,8 @@ header {
     font-size: 0.7rem;
     font-weight: 500;
     padding:1em;
-    background: linear-gradient(150deg, #eef 40% , #ab9bd8);
-    text-shadow: 0.2rem 0 10px #eee;
+    background: linear-gradient(150deg,#fff 50%, #f9d34c 50%);
+    text-shadow: 0.2rem 0 5px #111a;
 }
 
 header span {
@@ -66,9 +66,8 @@ header p::first-letter {
 }
 
 nav {
-    display:none;
     width: 100%;
-    background-color: #eef;
+    background-color: #f9d34c;
     border-top:0.1rem solid #444;
     position: relative;
     overflow-y: hidden;
@@ -80,18 +79,6 @@ nav ul {
     list-style: none;
     overflow: auto;
     font-weight: bold;
-    padding-right: 2.4rem;
-}
-
-nav:before {
-    content:" ";
-    position: absolute;
-    width:2rem;
-    height: 100%;
-    background-color:#eef ;
-    box-shadow: -1rem 0 20px 15px #eef;
-    top:0;
-    right:0;
 }
 
 nav li {
@@ -105,22 +92,24 @@ nav li a {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    border-left: 0.1rem solid #111b;
     font-size: 1.3rem;
     color:#111;
-    padding: 0.4em 1em;
+    padding: 0.1em 1em;
     height:100%;
     -webkit-tap-highlight-color: transparent;
 }
 
 nav li a i {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    padding:0;
+    margin:0;
 }
 
 nav li a:hover {
     transition: 0.4s;
-    border-radius: 0.6rem;
-    background-color: #1112;
-    color:#5035ae;
+    background-color: #111;
+    color:#f9d34c ;
 }
 
 main {
@@ -142,57 +131,114 @@ footer {
 }
 
 .biografia {
-    padding:0 1rem 1rem 1rem;
-    text-align: center;
-    color:#111;
+    margin: 1.5rem 0;
+    color:#ffd852;
     border-radius: 1.2rem;
-    background: linear-gradient(60deg, #dda8a8, #a8bfdd, #ddd6a8);
+    overflow: hidden;
+    border: 0.2rem solid #eef;
 }
 
-.biografia h2 {
-    font-family: "playwriteMX";
-    font-size: 1.9rem;
-    font-weight: 800;
-    padding:1rem;
+.biografia div {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    background-color: #ffd852;
+}
+
+.biografia img {
+    width: 12rem;
+    position:relative;
+    border-radius: 100px;
+    top:4rem;
+    border:0.2rem solid #fff;
+    animation: perfil_img 5s both infinite alternate;
 }
 
 .biografia p {
-    font-size: 1.4rem;
-    font-weight: 400;
+    padding:6rem 1rem 1rem 1rem;
+    font-size: 1.3rem;
+    color:#eef;
+    font-weight: 700;
+    font-family: Sans-Serif;
 }
 
 .gallery {
     margin: 1rem 0;
-    border-radius: 1.5rem;
-    background-color: #dde;
-    padding:0.4rem;
+    border-radius: 0.5rem;
 }
 
 .gallery h2 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    color: #ffd852;
     padding:1.3rem;
+    font-weight: 300;
+    font-family: "alfaSlabOne";
+    text-transform: uppercase;
     text-align: center;
-    color: #111;
-    font-family: "playwriteMX";
 }
 
 .gallery_flex {
-    display:-webkit-flex;
-    display:flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+    display: flex;
+    justify-content: start;
+    flex-flow: wrap;
+    gap:0.4rem;
     
 }
 
 .gallery img {
-    height:16rem;
-    border-radius: 1.3rem;
-    flex: 1;
+    flex:1;
+    max-height: 15rem;
     object-fit: cover;
+    filter:  grayscale(1);
+    border-radius: 0.5rem;
     border: 0.1rem solid #111;
 }
 
+
+@keyframes perfil_img {
+    0% {
+        height:100%;
+        width:14rem;
+        border-radius: 10px;
+    }
+    
+    25% {
+        width: 8rem;
+        height: 50%;
+        border-radius:35px;
+    }
+    
+    40% {
+        width:100%;
+        height: 75%;
+        filter: invert();
+    }
+    
+    50% {
+        border-radius:5px;
+        filter: grayscale();
+        width:10rem;
+        height: 95%;
+    }
+    
+    75% {
+        border-radius:100px;
+        filter: contrast(2);
+        width:11rem;
+        height: 100%;
+        
+    }
+    
+    100% {
+        border-radius:15px;
+        height: 75%;
+        width:15rem;
+        filter: blur(4px);
+    }
+}
 
 
 
